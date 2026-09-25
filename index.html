@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boletim Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <h1>Boletim Digital</h1>
+    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
+  </header>
+
+  <!-- ÁREA DOS CARDS DE RESUMO -->
+  <!-- Os cards são preenchidos pelo JavaScript (script.js) -->
+  <section class="cards" id="cards">
+    <!-- Cada card abaixo tem um id para o JS encontrar e preencher -->
+    <div class="card">
+      <span class="card-titulo">Média geral</span>
+      <span class="card-valor" id="media-geral">—</span>
+    </div>
+
+    <div class="card">
+      <span class="card-titulo">Total de faltas</span>
+      <span class="card-valor" id="total-faltas">—</span>
+    </div>
+
+    <div class="card">
+      <span class="card-titulo">Bom desempenho</span>
+      <span class="card-valor" id="qtd-bom">—</span>
+    </div>
+
+    <div class="card">
+      <span class="card-titulo">Precisam de atenção</span>
+      <span class="card-valor" id="qtd-atencao">—</span>
+    </div>
+
+    <div class="card">
+      <span class="card-titulo">Frequência demonstrativa</span>
+      <span class="card-valor" id="frequencia">—</span>
+      <span class="card-extra" id="frequencia-status">—</span>
+    </div>
+  </section>
+
+  <!-- TABELA DE DISCIPLINAS -->
+  <!-- O corpo da tabela (tbody) é preenchido pelo JavaScript -->
+  <section class="tabela-area">
+    <h2>Notas por disciplina</h2>
+
+    <div class="tabela-responsiva">
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Faltas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+          <!-- As linhas são criadas pelo JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <p>Projeto escolar — dados fictícios para demonstração.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

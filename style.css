@@ -1,0 +1,165 @@
+/* ===== RESET BÁSICO ===== */
+/* Remove espaçamentos padrão do navegador e facilita o layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== CORPO DA PÁGINA (DARK MODE) ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0B0F19;   /* fundo geral bem escuro */
+  color: #E5E7EB;              /* texto claro */
+  line-height: 1.5;
+  padding: 16px;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  text-align: center;
+  padding: 24px 16px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #EF4444; /* linha vermelha embaixo */
+}
+
+.cabecalho h1 {
+  font-size: 2rem;
+  color: #EF4444;              /* título em vermelho */
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: #9CA3AF;              /* cinza claro para o subtítulo */
+}
+
+/* ===== ÁREA DOS CARDS ===== */
+.cards {
+  display: grid;
+  /* No celular fica 1 coluna; em telas maiores vira várias colunas */
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+/* Cada card individual */
+.card {
+  background-color: #111827;   /* preto suave */
+  border: 1px solid #EF4444;   /* borda vermelha fina */
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-titulo {
+  font-size: 0.85rem;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-valor {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #EF4444;
+}
+
+.card-extra {
+  font-size: 0.85rem;
+  color: #22C55E;              /* verde para "Frequência adequada" */
+}
+
+/* ===== ÁREA DA TABELA ===== */
+.tabela-area {
+  background-color: #111827;
+  border: 1px solid #EF4444;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.tabela-area h2 {
+  color: #EF4444;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+/* Permite rolar a tabela na horizontal em telas pequenas */
+.tabela-responsiva {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;            /* força a rolagem em telas pequenas */
+}
+
+th, td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #1F2937;
+  font-size: 0.9rem;
+}
+
+th {
+  color: #EF4444;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+td {
+  color: #E5E7EB;
+}
+
+/* Linha da tabela com leve destaque ao passar o mouse */
+tbody tr:hover {
+  background-color: #1F2937;
+}
+
+/* Classes de situação (aplicadas pelo JS) */
+.situacao-bom {
+  color: #22C55E;              /* verde */
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #F59E0B;              /* laranja */
+  font-weight: bold;
+}
+
+.situacao-sem-nota {
+  color: #9CA3AF;              /* cinza */
+  font-style: italic;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6B7280;
+  padding: 16px 0;
+}
+
+/* ===== RESPONSIVIDADE (TELAS MAIORES) ===== */
+/* Quando a tela tiver 600px ou mais, os cards ficam em 2 colunas */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Quando a tela tiver 900px ou mais, os cards ficam em 5 colunas */
+@media (min-width: 900px) {
+  body {
+    padding: 24px 40px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
