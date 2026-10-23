@@ -11,64 +11,94 @@
   <!-- CABEÇALHO -->
   <header class="cabecalho">
     <h1>Boletim Digital</h1>
-    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
+    <p class="subtitulo">8º Ano — Turma 8A — Nº 13</p>
   </header>
 
-  <!-- ÁREA DOS CARDS DE RESUMO -->
-  <!-- Os cards são preenchidos pelo JavaScript (script.js) -->
-  <section class="cards" id="cards">
-    <!-- Cada card abaixo tem um id para o JS encontrar e preencher -->
-    <div class="card">
-      <span class="card-titulo">Média geral</span>
-      <span class="card-valor" id="media-geral">—</span>
-    </div>
-
-    <div class="card">
-      <span class="card-titulo">Total de faltas</span>
-      <span class="card-valor" id="total-faltas">—</span>
-    </div>
-
-    <div class="card">
-      <span class="card-titulo">Bom desempenho</span>
-      <span class="card-valor" id="qtd-bom">—</span>
-    </div>
-
-    <div class="card">
-      <span class="card-titulo">Precisam de atenção</span>
-      <span class="card-valor" id="qtd-atencao">—</span>
-    </div>
-
-    <div class="card">
-      <span class="card-titulo">Frequência demonstrativa</span>
-      <span class="card-valor" id="frequencia">—</span>
-      <span class="card-extra" id="frequencia-status">—</span>
-    </div>
+  <!-- ÁREA DE ACESSO POR PIN -->
+  <!-- O estudante digita somente o PIN. Turma e chamada são fixas no script.js -->
+  <section class="acesso" id="acesso">
+    <p class="acesso-info" id="acesso-info">8º Ano — Turma 8A — Nº 13</p>
+    <label class="acesso-label" for="campo-pin">Digite seu PIN</label>
+    <input
+      type="password"
+      id="campo-pin"
+      class="acesso-input"
+      inputmode="numeric"
+      autocomplete="off"
+      placeholder="PIN"
+    />
+    <button type="button" id="btn-entrar" class="botao">Entrar</button>
+    <p class="acesso-mensagem" id="acesso-mensagem"></p>
   </section>
 
-  <!-- TABELA DE DISCIPLINAS -->
-  <!-- O corpo da tabela (tbody) é preenchido pelo JavaScript -->
-  <section class="tabela-area">
-    <h2>Notas por disciplina</h2>
+  <!-- CONTEÚDO DO BOLETIM (escondido até o login) -->
+  <div id="conteudo-boletim" class="conteudo-boletim oculto">
 
-    <div class="tabela-responsiva">
-      <table>
-        <thead>
-          <tr>
-            <th>Disciplina</th>
-            <th>1º Tri</th>
-            <th>2º Tri</th>
-            <th>3º Tri</th>
-            <th>Média</th>
-            <th>Faltas</th>
-            <th>Situação</th>
-          </tr>
-        </thead>
-        <tbody id="corpo-tabela">
-          <!-- As linhas são criadas pelo JavaScript -->
-        </tbody>
-      </table>
-    </div>
-  </section>
+    <!-- ÁREA DOS CARDS DE RESUMO -->
+    <!-- Os cards são preenchidos pelo JavaScript (script.js) -->
+    <section class="cards" id="cards">
+      <!-- Cada card abaixo tem um id para o JS encontrar e preencher -->
+      <div class="card">
+        <span class="card-titulo">Média geral</span>
+        <span class="card-valor" id="media-geral">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Total de faltas</span>
+        <span class="card-valor" id="total-faltas">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Bom desempenho</span>
+        <span class="card-valor" id="qtd-bom">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Precisam de atenção</span>
+        <span class="card-valor" id="qtd-atencao">—</span>
+      </div>
+
+      <div class="card">
+        <span class="card-titulo">Frequência demonstrativa</span>
+        <span class="card-valor" id="frequencia">—</span>
+        <span class="card-extra" id="frequencia-status">—</span>
+      </div>
+    </section>
+
+    <!-- TABELA DE DISCIPLINAS -->
+    <!-- O corpo da tabela (tbody) é preenchido pelo JavaScript -->
+    <section class="tabela-area">
+      <h2>Notas por disciplina</h2>
+
+      <div class="tabela-responsiva">
+        <table>
+          <thead>
+            <tr>
+              <th>Disciplina</th>
+              <th>1º Tri</th>
+              <th>2º Tri</th>
+              <th>3º Tri</th>
+              <th>Média</th>
+              <th>Faltas</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela">
+            <!-- As linhas são criadas pelo JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- BOTÕES DE EDIÇÃO E SALVAMENTO -->
+      <div class="acoes">
+        <button type="button" id="btn-alterar" class="botao">Alterar dados</button>
+        <button type="button" id="btn-salvar" class="botao botao-salvar oculto">Salvar alterações</button>
+        <button type="button" id="btn-cancelar" class="botao botao-cancelar oculto">Cancelar</button>
+      </div>
+      <p class="edicao-mensagem" id="edicao-mensagem"></p>
+    </section>
+
+  </div>
 
   <!-- RODAPÉ -->
   <footer class="rodape">

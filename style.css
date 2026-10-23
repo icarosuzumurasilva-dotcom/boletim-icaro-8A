@@ -163,3 +163,149 @@ tbody tr:hover {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+/* ===== TELA DE ACESSO (PIN) — estilos acrescentados ao final ===== */
+.acesso {
+  background-color: #111827;
+  border: 1px solid #EF4444;
+  border-radius: 10px;
+  padding: 20px 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.acesso-info {
+  text-align: center;
+  color: #9CA3AF;
+  font-size: 0.9rem;
+}
+
+.acesso-label {
+  color: #E5E7EB;
+  font-size: 0.9rem;
+}
+
+.acesso-input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #EF4444;
+  background-color: #0B0F19;
+  color: #E5E7EB;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.acesso-input:focus {
+  outline: none;
+  border-color: #22C55E;
+}
+
+.acesso-mensagem {
+  text-align: center;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  color: #F59E0B;
+}
+
+.acesso-mensagem.erro {
+  color: #EF4444;
+}
+
+.acesso-mensagem.sucesso {
+  color: #22C55E;
+}
+
+/* ===== BOTÕES ===== */
+.botao {
+  background-color: #EF4444;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botao:hover {
+  background-color: #DC2626;
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.botao-salvar {
+  background-color: #22C55E;
+}
+
+.botao-salvar:hover {
+  background-color: #16A34A;
+}
+
+.botao-cancelar {
+  background-color: #6B7280;
+}
+
+.botao-cancelar:hover {
+  background-color: #4B5563;
+}
+
+/* ===== ÁREA DE AÇÕES E EDIÇÃO ===== */
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.edicao-mensagem {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  color: #F59E0B;
+}
+
+.edicao-mensagem.erro {
+  color: #EF4444;
+}
+
+.edicao-mensagem.sucesso {
+  color: #22C55E;
+}
+
+/* Campos de edição dentro da tabela */
+td input.campo-edicao {
+  width: 70px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #EF4444;
+  background-color: #0B0F19;
+  color: #E5E7EB;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+td input.campo-edicao:focus {
+  outline: none;
+  border-color: #22C55E;
+}
+
+td input.campo-edicao.invalido {
+  border-color: #F59E0B;
+  background-color: #1F1208;
+}
+
+/* ===== UTILITÁRIO ===== */
+.oculto {
+  display: none !important;
+}
