@@ -309,3 +309,119 @@ td input.campo-edicao.invalido {
 .oculto {
   display: none !important;
 }
+
+/* =====================================================
+   ÁREA DOS GRÁFICOS — estilos acrescentados ao final
+   Compatível com o tema escuro já existente.
+   ===================================================== */
+
+.area-graficos {
+  display: grid;
+  grid-template-columns: 1fr;   /* celular: 1 coluna */
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.grafico-card {
+  background-color: #111827;
+  border: 1px solid #EF4444;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;                 /* evita overflow no grid */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grafico-card h2 {
+  color: #EF4444;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.grafico-container {
+  position: relative;
+  width: 100%;
+  height: 280px;                /* altura padrão confortável */
+}
+
+.grafico-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* O card de média por disciplina tem ~15 linhas — precisa de mais altura */
+#graficoMediasDisciplinas {
+  /* a altura do container pai já é controlada abaixo */
+}
+
+.grafico-card:first-child .grafico-container {
+  height: 380px;
+}
+
+/* Estado "Perigo" (somente no card de faltas) */
+.estado-faltas {
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  color: #9CA3AF;
+}
+
+.badge-perigo {
+  display: inline-block;
+  background-color: #EF4444;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.grafico-card.perigo {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 1px #EF4444, 0 0 16px rgba(239, 68, 68, 0.35);
+}
+
+.grafico-card.perigo h2 {
+  color: #EF4444;
+}
+
+/* ===== RESPONSIVIDADE DOS GRÁFICOS ===== */
+/* Tablet: 2 colunas + 1 embaixo */
+@media (min-width: 700px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: 3 colunas lado a lado */
+@media (min-width: 1024px) {
+  .area-graficos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  /* No desktop, os cards de evolução e faltas ficam equilibrados */
+  .grafico-card:first-child .grafico-container {
+    height: 380px;
+  }
+
+  .grafico-card .grafico-container {
+    height: 380px;
+  }
+}
+
+/* Celular pequeno: o card de médias pode ficar mais alto */
+@media (max-width: 699px) {
+  .grafico-card:first-child .grafico-container {
+    height: 420px;
+  }
+
+  .grafico-card .grafico-container {
+    height: 260px;
+  }
+}

@@ -65,6 +65,35 @@
       </div>
     </section>
 
+    <!-- ÁREA DOS GRÁFICOS -->
+    <!-- São apenas uma camada de leitura sobre disciplinasAtuais. -->
+    <!-- Não interferem em edição, validação ou salvamento. -->
+    <section class="area-graficos" id="area-graficos" aria-label="Gráficos do boletim">
+
+      <article class="grafico-card">
+        <h2>Média por disciplina</h2>
+        <div class="grafico-container">
+          <canvas id="graficoMediasDisciplinas" role="img" aria-label="Gráfico de barras horizontais com a média atual de cada disciplina"></canvas>
+        </div>
+      </article>
+
+      <article class="grafico-card">
+        <h2>Evolução da média geral</h2>
+        <div class="grafico-container">
+          <canvas id="graficoEvolucaoTrimestres" role="img" aria-label="Gráfico de linha com a evolução da média geral por trimestre"></canvas>
+        </div>
+      </article>
+
+      <article class="grafico-card" id="grafico-card-faltas">
+        <h2>Faltas por trimestre</h2>
+        <div id="estadoFaltas" class="estado-faltas" aria-live="polite"></div>
+        <div class="grafico-container">
+          <canvas id="graficoFaltasTrimestres" role="img" aria-label="Gráfico de barras com as faltas somadas por trimestre"></canvas>
+        </div>
+      </article>
+
+    </section>
+
     <!-- TABELA DE DISCIPLINAS -->
     <!-- O corpo da tabela (tbody) é preenchido pelo JavaScript -->
     <section class="tabela-area">
@@ -105,6 +134,7 @@
     <p>Projeto escolar — dados fictícios para demonstração.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
